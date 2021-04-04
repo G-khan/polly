@@ -1,0 +1,18 @@
+server:
+  port: 8081
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/polly_db
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
