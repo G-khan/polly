@@ -13,7 +13,7 @@ data class Role (
 
     @Enumerated(EnumType.STRING)
     @NaturalId
-    var roleType: RoleType
+    var type: RoleType
     )
 
 
