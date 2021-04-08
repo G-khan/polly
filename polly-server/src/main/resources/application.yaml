@@ -17,3 +17,7 @@ spring:
 logging:
   level:
     org.hibernate.SQL: DEBUG
+
+app:
+  jwtSecret: JWTSuperSecretKey
+  jwtExpirationInMs: 604800000
