@@ -1,12 +1,11 @@
 package com.gokhana.polly.model.dto
 
-import javax.validation.constraints.NotBlank
-
 import javax.validation.constraints.Email
+import javax.validation.constraints.NotBlank
 import javax.validation.constraints.Size
 
 
-data class SignUpRequest (
+data class SignUpRequest(
 
     @field:Size(min = 4, max = 40)
     @field:NotBlank
@@ -19,7 +18,7 @@ data class SignUpRequest (
     @field:Size(max = 40)
     @field:NotBlank
     @field:Email
-    private val email: String,
+    val email: String,
 
     @field:Size(min = 6, max = 20)
     @field:NotBlank

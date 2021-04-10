@@ -1,4 +1,4 @@
-package com.gokhana.polly.entity
+package com.gokhana.polly.model.entity
 
 import org.hibernate.annotations.NaturalId
 import javax.persistence.*
@@ -14,10 +14,10 @@ import javax.validation.constraints.Size
         UniqueConstraint(columnNames = ["email"])
     ]
 )
-data class User (
+data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+    var id: Long = 0,
 
     @NotBlank
     @Size(max = 56)
@@ -43,6 +43,6 @@ data class User (
         joinColumns = [JoinColumn(name = "user_id")],
         inverseJoinColumns = [JoinColumn(name = "role_id")]
     )
-    var roles:Set<Role> = mutableSetOf()
+    var roles: Set<Role> = mutableSetOf()
 
 )

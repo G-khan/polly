@@ -1,7 +1,8 @@
 package com.gokhana.polly.security
 
-import com.gokhana.polly.entity.User
+import com.gokhana.polly.model.entity.User
 import com.gokhana.polly.repository.UserRepository
+import com.gokhana.polly.security.model.UserPrincipal
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException

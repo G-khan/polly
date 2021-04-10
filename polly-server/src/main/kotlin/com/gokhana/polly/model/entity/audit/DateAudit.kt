@@ -1,4 +1,4 @@
-package com.gokhana.polly.entity.audit
+package com.gokhana.polly.model.entity.audit
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import org.springframework.data.annotation.CreatedDate

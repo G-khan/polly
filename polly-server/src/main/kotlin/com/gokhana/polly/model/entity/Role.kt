@@ -1,4 +1,4 @@
-package com.gokhana.polly.entity
+package com.gokhana.polly.model.entity
 
 import com.gokhana.polly.enum.RoleType
 import org.hibernate.annotations.NaturalId
@@ -6,7 +6,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "roles")
-data class Role (
+data class Role(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long,
@@ -14,6 +14,6 @@ data class Role (
     @Enumerated(EnumType.STRING)
     @NaturalId
     var type: RoleType
-    )
+)
 
 
