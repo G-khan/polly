@@ -1,6 +1,6 @@
 package com.gokhana.polly.repository
 
-import com.gokhana.polly.model.entity.User
+import com.gokhana.polly.model.entity.user.User
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

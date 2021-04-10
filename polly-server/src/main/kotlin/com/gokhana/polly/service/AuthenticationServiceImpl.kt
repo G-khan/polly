@@ -4,8 +4,8 @@ import com.gokhana.polly.enum.RoleType
 import com.gokhana.polly.exception.PollyInternalException
 import com.gokhana.polly.exception.ValidationException
 import com.gokhana.polly.model.dto.LoginRequest
-import com.gokhana.polly.model.entity.Role
-import com.gokhana.polly.model.entity.User
+import com.gokhana.polly.model.entity.user.Role
+import com.gokhana.polly.model.entity.user.User
 import com.gokhana.polly.repository.RoleRepository
 import com.gokhana.polly.repository.UserRepository
 import com.gokhana.polly.security.JwtTokenProvider
