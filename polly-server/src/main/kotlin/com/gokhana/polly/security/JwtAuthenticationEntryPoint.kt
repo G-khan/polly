@@ -15,7 +15,11 @@ class JwtAuthenticationEntryPoint : AuthenticationEntryPoint {
         private val logger: Logger = LoggerFactory.getLogger(JwtAuthenticationEntryPoint::class.java)
     }
 
-    override fun commence(request: HttpServletRequest, response: HttpServletResponse, authException: org.springframework.security.core.AuthenticationException) {
+    override fun commence(
+        request: HttpServletRequest,
+        response: HttpServletResponse,
+        authException: org.springframework.security.core.AuthenticationException
+    ) {
         logger.error("Responding with unauthorized error. Message - ${authException.message}")
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, authException.message)
     }

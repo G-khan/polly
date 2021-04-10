@@ -1,4 +1,4 @@
-package com.gokhana.polly.security
+package com.gokhana.polly.security.model
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal
 

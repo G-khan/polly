@@ -1,5 +1,6 @@
 package com.gokhana.polly.security
 
+import com.gokhana.polly.security.model.UserPrincipal
 import io.jsonwebtoken.*
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
@@ -20,7 +21,7 @@ class JwtTokenProvider {
     @Value("\${app.jwtExpirationInMs}")
     private val jwtExpirationInMs = 0
 
-    fun generateToken(authentication: Authentication): String? {
+    fun generateToken(authentication: Authentication): String {
         val userPrincipal = authentication.principal as UserPrincipal
         val now = Date()
         val expiryDate = Date(now.time + jwtExpirationInMs)
