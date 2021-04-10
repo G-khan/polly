@@ -4,7 +4,7 @@ import com.gokhana.polly.model.dto.BaseResponse
 import com.gokhana.polly.model.dto.JwtAuthenticationResponse
 import com.gokhana.polly.model.dto.LoginRequest
 import com.gokhana.polly.model.dto.SignUpRequest
-import com.gokhana.polly.model.entity.User
+import com.gokhana.polly.model.entity.user.User
 import com.gokhana.polly.service.AuthenticationService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity

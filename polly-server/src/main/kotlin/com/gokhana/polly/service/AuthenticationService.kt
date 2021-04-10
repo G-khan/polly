@@ -1,7 +1,7 @@
 package com.gokhana.polly.service
 
 import com.gokhana.polly.model.dto.LoginRequest
-import com.gokhana.polly.model.entity.User
+import com.gokhana.polly.model.entity.user.User
 import java.net.URI
 
 interface AuthenticationService {

@@ -1,4 +1,4 @@
-package com.gokhana.polly.model.entity
+package com.gokhana.polly.model.entity.user
 
 import org.hibernate.annotations.NaturalId
 import javax.persistence.*

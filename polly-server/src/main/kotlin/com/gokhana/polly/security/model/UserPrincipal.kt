@@ -1,7 +1,7 @@
 package com.gokhana.polly.security.model
 
 import com.fasterxml.jackson.annotation.JsonIgnore
-import com.gokhana.polly.model.entity.User
+import com.gokhana.polly.model.entity.user.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails

@@ -1,7 +1,7 @@
 package com.gokhana.polly.repository
 
 import com.gokhana.polly.enum.RoleType
-import com.gokhana.polly.model.entity.Role
+import com.gokhana.polly.model.entity.user.Role
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
