@@ -4,4 +4,4 @@ Polly is a service that shows what people think of an idea and what is the popul
 
 ## Credits
 
-Insperied by [Rajeev Singh's blog post](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-1/)
+İnspired by [Rajeev Singh's blog post](https://www.callicoder.com/spring-boot-spring-security-jwt-mysql-react-app-part-1/)
