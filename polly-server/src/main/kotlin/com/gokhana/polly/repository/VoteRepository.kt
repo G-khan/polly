@@ -14,13 +14,13 @@ import org.springframework.stereotype.Repository
 @Repository
 interface VoteRepository : JpaRepository<Vote, Long> {
     @Query("SELECT NEW com.gokhana.polly.model.ChoiceVoteCount(v.choice.id, count(v.id)) FROM Vote v WHERE v.poll.id in :pollIds GROUP BY v.choice.id")
-    fun countByPollIdInGroupByChoiceId(@Param("pollIds") pollIds: List<Long?>?): Iterable<ChoiceVoteCount?>
+    fun countByPollIdInGroupByChoiceId(@Param("pollIds") pollIds: List<Long?>?): List<ChoiceVoteCount>
 
     @Query("SELECT NEW com.gokhana.polly.model.ChoiceVoteCount(v.choice.id, count(v.id)) FROM Vote v WHERE v.poll.id = :pollId GROUP BY v.choice.id")
-    fun countByPollIdGroupByChoiceId(@Param("pollId") pollId: Long?): List<ChoiceVoteCount?>
+    fun countByPollIdGroupByChoiceId(@Param("pollId") pollId: Long?): List<ChoiceVoteCount>
 
     @Query("SELECT v FROM Vote v where v.user.id = :userId and v.poll.id in :pollIds")
-    fun findByUserIdAndPollIdIn(@Param("userId") userId: Long?, @Param("pollIds") pollIds: List<Long?>?): List<Vote?>
+    fun findByUserIdAndPollIdIn(@Param("userId") userId: Long, @Param("pollIds") pollIds: List<Long>): List<Vote>
 
     @Query("SELECT v FROM Vote v where v.user.id = :userId and v.poll.id = :pollId")
     fun findByUserIdAndPollId(@Param("userId") userId: Long?, @Param("pollId") pollId: Long?): Vote?

@@ -17,7 +17,7 @@ import javax.persistence.MappedSuperclass
 abstract class DateAudit : Serializable {
     @CreatedDate
     @Column(nullable = false, updatable = false)
-    var createdAt: Instant? = null
+    var createdAt: Instant = Instant.now()
 
     @LastModifiedDate
     @Column(nullable = false)

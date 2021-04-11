@@ -19,13 +19,14 @@ data class Poll(
     var id: Long = 0,
 
     @Size(max = 140)
-    var question: @NotBlank String,
+    @NotBlank
+    var question: String,
 
     @OneToMany(mappedBy = "poll", cascade = [CascadeType.ALL], fetch = FetchType.EAGER, orphanRemoval = true)
     @Size(min = 2, max = 6)
     @Fetch(FetchMode.SELECT)
     @BatchSize(size = 30)
-    private var choices: List<Choice> = arrayListOf(),
+    var choices: List<Choice> = arrayListOf(),
 
     @NotNull
     var expirationDateTime: Instant

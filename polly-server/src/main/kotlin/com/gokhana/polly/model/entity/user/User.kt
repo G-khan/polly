@@ -1,5 +1,6 @@
 package com.gokhana.polly.model.entity.user
 
+import com.gokhana.polly.model.entity.audit.DateAudit
 import org.hibernate.annotations.NaturalId
 import javax.persistence.*
 import javax.validation.constraints.Email
@@ -45,4 +46,4 @@ data class User(
     )
     var roles: Set<Role> = mutableSetOf()
 
-)
+): DateAudit()
