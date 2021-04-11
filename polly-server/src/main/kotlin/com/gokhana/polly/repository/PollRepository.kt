@@ -11,8 +11,8 @@ import java.util.*
 @Repository
 interface PollRepository : JpaRepository<Poll, Long> {
     override fun findById(pollId: Long): Optional<Poll>
-    fun findByCreatedBy(userId: Long, pageable: Pageable): Page<Poll?>
+    fun findByCreatedBy(userId: Long, pageable: Pageable): Page<Poll>
     fun countByCreatedBy(userId: Long): Long
-    fun findByIdIn(pollIds: List<Long?>): List<Poll?>
-    fun findByIdIn(pollIds: List<Long?>, sort: Sort): List<Poll?>
+    fun findByIdIn(pollIds: List<Long?>): List<Poll>
+    fun findByIdIn(pollIds: List<Long?>, sort: Sort): List<Poll>
 }

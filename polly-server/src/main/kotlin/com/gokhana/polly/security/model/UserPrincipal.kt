@@ -11,7 +11,7 @@ import java.util.stream.Collectors
 
 data class UserPrincipal(
     internal var id: Long,
-    private var name: String,
+    internal var name: String,
     private var username: String,
     @field:JsonIgnore var email: String,
     @field:JsonIgnore private var password: String,
