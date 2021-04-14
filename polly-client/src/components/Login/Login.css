@@ -1,12 +1,12 @@
 .login-wrapper {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+        max-width: 420px;
+        margin: 0 auto;
+        margin: 0 auto;
+        margin-top: 140px;
+    
 }
 
 .login-button{
     padding-top: 0.5em;
+    width: 100%;
 }
