@@ -1,21 +1,23 @@
 import React from 'react';
 import './Login.css';
+import Header from '../Dashboard/Header';
+
 import {
     Button,
     TextField,
     Card,
     CardContent,
     CardActions,
-    CardHeader,
-} from "@material-ui/core";
+    CardHeader} from "@material-ui/core";
 
 export default function Login() {
     return (
-
         <div className="login-wrapper">
+            <Header />
             <form>
-                <Card >
+                <Card>
                     <CardHeader title="Login App" />
+
                     <CardContent>
                         <label>
                             <TextField
@@ -36,9 +38,7 @@ export default function Login() {
                         </label>
                     </CardContent>
                     <CardActions>
-                        <div className="login-button">
-                            <Button variant="contained" color="primary" type="submit">Login</Button >
-                        </div>
+                        <Button fullWidth variant="contained" size="large" color="primary" className="login-button" type="submit">Login</Button >
                     </CardActions>
                 </Card>
             </form>
