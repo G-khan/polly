@@ -12,7 +12,7 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
-
+import PollIcon from '@material-ui/icons/Poll';
 
 const headersData = [
     {
@@ -48,18 +48,20 @@ const headersData = [
 
 const useStyles = makeStyles(() => ({
     header: {
-        backgroundColor: "#400CCC",
+        backgroundColor: "#FFF",
         paddingRight: "79px",
         paddingLeft: "118px",
         "@media (max-width: 900px)": {
             paddingLeft: 0,
         },
+        boxShadow:'none'
+    
     },
     logo: {
-        fontFamily: "Helvetica",
+        fontFamily: "Lemonada",
         fontWeight: 900,
-        fontSize:24,
-        color: "#FFFEFE",
+        fontSize:32,
+        color: "#2496cf",
         textAlign: "left",
     },
     menuButton: {
@@ -71,6 +73,11 @@ const useStyles = makeStyles(() => ({
     toolbar: {
         display: "flex",
         justifyContent: "space-between",
+        border:0
+        ,shadowRadius: 0,
+        shadowOffset: {
+            height: 0,
+        },
     },
     drawerContainer: {
         padding: "20px 30px",
@@ -102,8 +109,8 @@ export default function Header() {
 
     const displayDesktop = () => {
         return (
-            <Toolbar className={toolbar}>
-                {femmecubatorLogo}
+            <Toolbar  no-border  className={toolbar}>
+                {pollyLogo}
                 <div>{getMenuButtons()}</div>
             </Toolbar>
         );
@@ -139,7 +146,7 @@ export default function Header() {
                     <div className={drawerContainer}>{getDrawerChoices()}</div>
                 </Drawer>
 
-                <div>{femmecubatorLogo}</div>
+                <div>{pollyLogo}</div>
             </Toolbar>
         );
     };
@@ -163,9 +170,9 @@ export default function Header() {
             });
     };
 
-    const femmecubatorLogo = (
+    const pollyLogo = (
         <Typography variant="h6" component="h1" className={logo}>
-            Polly
+             <PollIcon /> Polly.
         </Typography>
     );
 
@@ -175,7 +182,7 @@ export default function Header() {
                 <Button
                     {...{
                         key: label,
-                        color: "inherit",
+                        color: "black",
                         to: href,
                         className: menuButton,
                     }}
@@ -188,7 +195,7 @@ export default function Header() {
 
     return (
         <header>
-            <AppBar className={header}>
+            <AppBar  position="static" className={header}>
                 {mobileView ? displayMobile() : displayDesktop()}
             </AppBar>
         </header>

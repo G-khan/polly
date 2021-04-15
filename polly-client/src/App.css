@@ -1,42 +1,73 @@
-.App {
-  text-align: center;
+
+
+.wrapper{
+    background-color: gray;
+    color: #2D2D2D;
+    font-family: 'Ubuntu';
+    transition: background-color 0.5s ease;
+    height: 100%;
+    margin:0px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+
+.slogan{
+  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    color: #222222;
+}
+.changing-keywords{
+  vertical-align:-webkit-baseline-middle;
+  height:20px;
+  display: inline-block;
+    color: #2496cf;
+}
+.hidden{
+  position:absolute;
+  top: 20px;
+  display:inline-block;
+  width:250px;
+    opacity:0;
+  animation: slideme 8s infinite;
+}
+.hidden:nth-child(3){
+  animation-delay: 2s;
+}
+.hidden:nth-child(5){
+  animation-delay: 4s;
+}
+.hidden:nth-child(7){
+  animation-delay: 6s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes slideme {
+  0% {
+    top: 20px;
+    opacity:0;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  5% {
+    top:  0px;
+    opacity:1;
   }
-  to {
-    transform: rotate(360deg);
+  10%{
+    top : 0;
+    opacity:1;
   }
-}
-
-.wrapper {
-  padding: 20px;
+  20%{
+    opacity:1;
+  }
+  25% {    
+  opacity:0.1;
+    top : 0;
+  }
+  30% {
+    opacity:0;
+    top: 20px;
+  }
 }

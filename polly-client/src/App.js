@@ -2,18 +2,29 @@ import React, { useState } from 'react';
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
+import Header from './components/Dashboard/Header';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Login from './components/Login/Login';
 
 function App() {
-  const [token, setToken] = useState();
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
-  
-  return(
-    <div className="wrapper">
-      <h1>Application</h1>
+
+
+  return (
+    <main>
+      <Header />
+      <div className="wrapper">
+      <div style={{ height: "100vh", background: "#f8f8f8", color: "black" }}>
+          <div class="slogan">
+          Create instant, real-time polls for <div style={{ textDecoration: 'underline'}} class="changing-keywords" id="change">
+              <strong>
+                <u class="hidden">free</u><br />
+                <u class="hidden">fun</u><br />
+                <u class="hidden">fans</u><br />
+                <u class="hidden">decision</u>
+              </strong>
+            </div>
+          </div>
+        </div>
+      </div>
       <BrowserRouter>
         <Switch>
           <Route path="/dashboard">
@@ -24,7 +35,7 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-    </div>
+    </main>
   );
 }
 
