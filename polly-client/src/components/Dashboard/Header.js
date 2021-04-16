@@ -13,37 +13,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import PollIcon from '@material-ui/icons/Poll';
-
-const headersData = [
-    {
-        label: "Login",
-        href: "/login",
-        logged: false
-    },
-    {
-        label: "Signup",
-        href: "/signup",
-        logged: false
-    },/*
-    {
-        label: "My Account",
-        href: "/account",
-        logged: true
-
-    },
-    {
-        label: "Polls",
-        href: "/polls",
-        logged: true
-
-    },
-    {
-        label: "Log Out",
-        href: "/logout",
-        logged: true
-
-    },*/
-];
+import { SpaceBar } from "@material-ui/icons";
 
 
 const useStyles = makeStyles(() => ({
@@ -54,13 +24,13 @@ const useStyles = makeStyles(() => ({
         "@media (max-width: 900px)": {
             paddingLeft: 0,
         },
-        boxShadow:'none'
-    
+        boxShadow: 'none'
+
     },
     logo: {
         fontFamily: "Lemonada",
         fontWeight: 900,
-        fontSize:32,
+        fontSize: 32,
         color: "#2496cf",
         textAlign: "left",
     },
@@ -68,13 +38,13 @@ const useStyles = makeStyles(() => ({
         fontFamily: "Open Sans, sans-serif",
         fontWeight: 700,
         size: "18px",
-        marginLeft: "38px",
+        margin: "5"
     },
     toolbar: {
         display: "flex",
         justifyContent: "space-between",
-        border:0
-        ,shadowRadius: 0,
+        border: 0
+        , shadowRadius: 0,
         shadowOffset: {
             height: 0,
         },
@@ -109,9 +79,14 @@ export default function Header() {
 
     const displayDesktop = () => {
         return (
-            <Toolbar  no-border  className={toolbar}>
+            <Toolbar no-border className={toolbar}>
                 {pollyLogo}
-                <div>{getMenuButtons()}</div>
+                <div>
+
+                    <Button color="primary" variant="outlined">Login</Button>&nbsp;&nbsp;
+                    <Button color="primary" variant="contained">Signup</Button>
+
+                </div>
             </Toolbar>
         );
     };
@@ -143,7 +118,13 @@ export default function Header() {
                         onClose: handleDrawerClose,
                     }}
                 >
-                    <div className={drawerContainer}>{getDrawerChoices()}</div>
+                    <div className={drawerContainer}>
+
+
+                        <MenuItem>Login</MenuItem>
+
+                        <MenuItem>Register</MenuItem>
+                    </div>
                 </Drawer>
 
                 <div>{pollyLogo}</div>
@@ -151,51 +132,18 @@ export default function Header() {
         );
     };
 
-    const getDrawerChoices = () => {
-        return headersData.map(({ label, href, logged }) => {
-            
-                return logged === false ? (
-                    <Link
-                        {...{
-                            component: RouterLink,
-                            to: href,
-                            color: "inherit",
-                            style: { textDecoration: "none" },
-                            key: label,
-                        }}
-                    >
-                        <MenuItem>{label}</MenuItem>
-                    </Link>
-                ) : null
-            });
-    };
 
     const pollyLogo = (
         <Typography variant="h6" component="h1" className={logo}>
-             <PollIcon /> Polly.
+            <PollIcon /> Polly.
         </Typography>
     );
 
-    const getMenuButtons = () => {
-        return headersData.map(({ label, href }) => {
-            return (
-                <Button
-                    {...{
-                        key: label,
-                        color: "black",
-                        to: href,
-                        className: menuButton,
-                    }}
-                >
-                    {label}
-                </Button>
-            );
-        });
-    };
+
 
     return (
         <header>
-            <AppBar  position="static" className={header}>
+            <AppBar position="static" className={header}>
                 {mobileView ? displayMobile() : displayDesktop()}
             </AppBar>
         </header>

@@ -1,7 +1,7 @@
 
 
 .wrapper{
-    background-color: gray;
+    background-color: #FAFAFA;
     color: #2D2D2D;
     font-family: 'Ubuntu';
     transition: background-color 0.5s ease;
@@ -15,24 +15,47 @@
 .slogan{
   margin: 0;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    font-size: 64px;
     color: #222222;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.altSlogan{
+  margin-top:2em;
+  opacity: 70%;
+}
+
+.mainWords{
+  font-size: 54px;
+}
+
+.changable{
+  padding-left:0.1em;
+  text-align: left;
+
 }
 .changing-keywords{
   vertical-align:-webkit-baseline-middle;
   height:20px;
   display: inline-block;
-    color: #2496cf;
+  font-family: "Arial";
+}
+
+.createPoll{
+  text-align: center;
+
 }
 .hidden{
   position:absolute;
-  top: 20px;
+  
   display:inline-block;
-  width:250px;
+  padding-left:5px;
+  width:150px;
     opacity:0;
   animation: slideme 8s infinite;
 }
