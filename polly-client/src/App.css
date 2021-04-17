@@ -1,16 +1,10 @@
-
-
 .wrapper{
     background-color: #FAFAFA;
     color: #2D2D2D;
     font-family: 'Ubuntu';
-    transition: background-color 0.5s ease;
     height: 100%;
     margin:0px auto;
 }
-
-
-
 
 .slogan{
   margin: 0;

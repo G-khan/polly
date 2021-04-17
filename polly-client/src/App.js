@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
@@ -6,19 +5,13 @@ import Header from './components/Dashboard/Header';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import {
   Button,
-  TextField,
-  Card,
-  CardContent,
-  CardActions,
-  CardHeader,
   withStyles,
-  makeStyles
 } from "@material-ui/core";
 import AddBoxIcon from '@material-ui/icons/AddBox';
 
 
 function App() {
-  const ColorButton = withStyles((theme) => ({
+  const ColorButton = withStyles(() => ({
     root: {
       fontFamily: "Ubuntu",
       fontSize: "22px",
@@ -40,7 +33,7 @@ function App() {
     <main>
       <Header />
       <div className="wrapper">
-        <div style={{ height: "100vh", color: "black", fontWeight: "600" }}>
+        <div style={{ color: "black", fontWeight: "600" }}>
           <div class="slogan">
             <div className="mainWords">
               Create instant, real-time <br />

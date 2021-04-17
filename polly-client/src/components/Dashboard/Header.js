@@ -6,15 +6,11 @@ import {
     Button,
     IconButton,
     Drawer,
-    Link,
     MenuItem,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import React, { useState, useEffect } from "react";
-import { Link as RouterLink } from "react-router-dom";
 import PollIcon from '@material-ui/icons/Poll';
-import { SpaceBar } from "@material-ui/icons";
-
+import React, { useState, useEffect } from "react";
 
 const useStyles = makeStyles(() => ({
     header: {
@@ -43,11 +39,12 @@ const useStyles = makeStyles(() => ({
     toolbar: {
         display: "flex",
         justifyContent: "space-between",
-        border: 0
-        , shadowRadius: 0,
+        border: 0,
+        shadowRadius: 0,
         shadowOffset: {
             height: 0,
         },
+        letterSpacing: "1em",
     },
     drawerContainer: {
         padding: "20px 30px",
@@ -56,7 +53,7 @@ const useStyles = makeStyles(() => ({
 
 
 export default function Header() {
-    const { header, logo, menuButton, toolbar, drawerContainer } = useStyles();
+    const { header, logo, toolbar, drawerContainer } = useStyles();
 
     const [state, setState] = useState({
         mobileView: false,
@@ -83,8 +80,8 @@ export default function Header() {
                 {pollyLogo}
                 <div>
 
-                    <Button color="primary" variant="outlined">Login</Button>&nbsp;&nbsp;
-                    <Button color="primary" variant="contained">Signup</Button>
+                    <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} >Login</Button>&nbsp;
+                    <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, backgroundColor: "#2496cf", textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} variant="contained">Sign Up</Button>
 
                 </div>
             </Toolbar>
