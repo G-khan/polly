@@ -9,8 +9,9 @@ import {
     MenuItem,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import PollIcon from '@material-ui/icons/Poll';
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
+import pollIcon from '../../poll.png';
+import { Link, BrowserRouter, Route, Switch } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     header: {
@@ -21,11 +22,9 @@ const useStyles = makeStyles(() => ({
             paddingLeft: 0,
         },
         boxShadow: 'none'
-
     },
     logo: {
-        fontFamily: "Lemonada",
-        fontWeight: 900,
+        fontFamily: "Black Han Sans",
         fontSize: 32,
         color: "#2496cf",
         textAlign: "left",
@@ -51,8 +50,21 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
+class Header extends Component{
 
-export default function Header() {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+      }
+      componentDidMount(){
+        this.HeaderFun();
+      }
+    render(){
+        return HeaderFun;
+    }
+}
+
+export default function HeaderFun() {
     const { header, logo, toolbar, drawerContainer } = useStyles();
 
     const [state, setState] = useState({
@@ -79,9 +91,15 @@ export default function Header() {
             <Toolbar no-border className={toolbar}>
                 {pollyLogo}
                 <div>
+                    <BrowserRouter>
 
-                    <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} >Login</Button>&nbsp;
+                        <Link to="/login">
+                            <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} >
+                                Login
+                        </Button>
+                        </Link>&nbsp;
                     <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, backgroundColor: "#2496cf", textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} variant="contained">Sign Up</Button>
+                    </BrowserRouter>
 
                 </div>
             </Toolbar>
@@ -107,7 +125,6 @@ export default function Header() {
                 >
                     <MenuIcon />
                 </IconButton>
-
                 <Drawer
                     {...{
                         anchor: "left",
@@ -116,27 +133,20 @@ export default function Header() {
                     }}
                 >
                     <div className={drawerContainer}>
-
-
                         <MenuItem>Login</MenuItem>
-
                         <MenuItem>Register</MenuItem>
                     </div>
                 </Drawer>
-
                 <div>{pollyLogo}</div>
             </Toolbar>
         );
     };
 
-
     const pollyLogo = (
         <Typography variant="h6" component="h1" className={logo}>
-            <PollIcon /> Polly.
+            <img style={{ height: "50px", float: "left" }} src={pollIcon} alt="poll" /> Polly.
         </Typography>
     );
-
-
 
     return (
         <header>

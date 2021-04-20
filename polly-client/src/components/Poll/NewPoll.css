@@ -1,0 +1,13 @@
+.new-poll-container {
+    background-color: #FAFAFA;
+    color: #2D2D2D;
+    font-family: 'Ubuntu';
+    height: 100%;
+    margin:0px auto;
+    text-align: center;
+}
+
+.head{
+    top:40%;
+    justify-content: center;
+}
