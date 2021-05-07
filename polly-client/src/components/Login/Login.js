@@ -1,6 +1,7 @@
-import React from 'react';
 import './Login.css';
 import Header from '../Dashboard/Header';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 import {
     Button,
@@ -10,10 +11,15 @@ import {
     CardActions,
     CardHeader} from "@material-ui/core";
 
-export default function Login() {
+class Login extends Component{
+    render() {
+        return LoginFun
+    }
+
+}    
+export default function LoginFun() {
     return (
         <div className="login-wrapper">
-            <Header />
             
             <form>
                 <Card>
@@ -46,3 +52,6 @@ export default function Login() {
         </div>
     )
 }
+
+ReactDOM.render(<Login />, document.getElementById('root'));
+
