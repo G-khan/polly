@@ -11,17 +11,12 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect, Component } from "react";
 import pollIcon from '../../poll.png';
-import { Link, BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     header: {
         backgroundColor: "#FFF",
-        paddingRight: "79px",
-        paddingLeft: "118px",
-        "@media (max-width: 900px)": {
-            paddingLeft: 0,
-        },
-        boxShadow: 'none'
+        boxShadow: 'none',
     },
     logo: {
         fontFamily: "Black Han Sans",
@@ -32,39 +27,25 @@ const useStyles = makeStyles(() => ({
     menuButton: {
         fontFamily: "Open Sans, sans-serif",
         fontWeight: 700,
-        size: "18px",
-        margin: "5"
     },
     toolbar: {
         display: "flex",
-        justifyContent: "space-between",
         border: 0,
         shadowRadius: 0,
         shadowOffset: {
             height: 0,
         },
-        letterSpacing: "1em",
+        backgroundColor: "#fff",
+        color: "#000",
     },
     drawerContainer: {
         padding: "20px 30px",
     },
 }));
 
-class Header extends Component{
 
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-      }
-      componentDidMount(){
-        this.HeaderFun();
-      }
-    render(){
-        return HeaderFun;
-    }
-}
 
-export default function HeaderFun() {
+export default function Header() {
     const { header, logo, toolbar, drawerContainer } = useStyles();
 
     const [state, setState] = useState({
@@ -88,23 +69,22 @@ export default function HeaderFun() {
 
     const displayDesktop = () => {
         return (
-            <Toolbar no-border className={toolbar}>
-                {pollyLogo}
+            <Toolbar no-border className={toolbar} style={{ justifyContent: "space-between" }}>
+                <Link to="/" style={{ textDecoration: 'inherit' }}>{pollyLogo}</Link>
                 <div>
-                    <BrowserRouter>
 
-                        <Link to="/login">
-                            <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} >
-                                Login
+                    <Link to="/login" style={{ textDecoration: 'inherit' }}>
+                        <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} >
+                            Login
                         </Button>
-                        </Link>&nbsp;
-                    <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, backgroundColor: "#2496cf", textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} variant="contained">Sign Up</Button>
-                    </BrowserRouter>
+                    </Link>&nbsp;
 
+                    <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, backgroundColor: "#2496cf", textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} variant="contained">Sign Up</Button>
                 </div>
             </Toolbar>
         );
     };
+
 
     const displayMobile = () => {
         const handleDrawerOpen = () =>
@@ -113,18 +93,16 @@ export default function HeaderFun() {
             setState((prevState) => ({ ...prevState, drawerOpen: false }));
 
         return (
-            <Toolbar>
+            <Toolbar no-border className={toolbar} style={{ justifyContent: "center" }}>
                 <IconButton
                     {...{
                         edge: "start",
-                        color: "inherit",
-                        "aria-label": "menu",
-                        "aria-haspopup": "true",
                         onClick: handleDrawerOpen,
                     }}
                 >
                     <MenuIcon />
                 </IconButton>
+
                 <Drawer
                     {...{
                         anchor: "left",
@@ -133,14 +111,21 @@ export default function HeaderFun() {
                     }}
                 >
                     <div className={drawerContainer}>
-                        <MenuItem>Login</MenuItem>
-                        <MenuItem>Register</MenuItem>
+                        <Link to="/login">
+                            <MenuItem>Login</MenuItem>
+                        </Link>
                     </div>
                 </Drawer>
-                <div>{pollyLogo}</div>
+
+                <div>
+                    <Link to="/">
+                        {pollyLogo}
+                    </Link>
+                </div>
             </Toolbar>
         );
     };
+
 
     const pollyLogo = (
         <Typography variant="h6" component="h1" className={logo}>
@@ -150,7 +135,7 @@ export default function HeaderFun() {
 
     return (
         <header>
-            <AppBar position="static" className={header}>
+            <AppBar position="static" >
                 {mobileView ? displayMobile() : displayDesktop()}
             </AppBar>
         </header>

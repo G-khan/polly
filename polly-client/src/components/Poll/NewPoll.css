@@ -11,3 +11,12 @@
     top:40%;
     justify-content: center;
 }
+
+
+.MuiFormLabel-root.Mui-focused {
+    color: #2496cf !important;
+  }
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #2496cf !important;
+  }
+  

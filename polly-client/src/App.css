@@ -6,17 +6,20 @@
     margin:0px auto;
 }
 
+mark{
+  background-color:gray;
+  font-weight: 900;
+  text-decoration: underline overline;
+  color:#FAFAFA;
+}
 .slogan{
-    margin: 0;
     position: absolute;
-    top: 45%;
+    top: 47%;
     left: 50%;
-    margin-right: -50%;
     transform: translate(-50%, -50%);
     color: #222222;
     justify-content: center;
     text-align: center;
-
 }
 
 .altSlogan{
