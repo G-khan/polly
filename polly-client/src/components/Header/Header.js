@@ -2,7 +2,6 @@ import {
     AppBar,
     Toolbar,
     Typography,
-    makeStyles,
     Button,
     IconButton,
     Drawer,
@@ -12,41 +11,10 @@ import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect, Component } from "react";
 import pollIcon from '../../poll.png';
 import { Link } from 'react-router-dom';
-
-const useStyles = makeStyles(() => ({
-    header: {
-        backgroundColor: "#FFF",
-        boxShadow: 'none',
-    },
-    logo: {
-        fontFamily: "Black Han Sans",
-        fontSize: 32,
-        color: "#2496cf",
-        textAlign: "left",
-    },
-    menuButton: {
-        fontFamily: "Open Sans, sans-serif",
-        fontWeight: 700,
-    },
-    toolbar: {
-        display: "flex",
-        border: 0,
-        shadowRadius: 0,
-        shadowOffset: {
-            height: 0,
-        },
-        backgroundColor: "#fff",
-        color: "#000",
-    },
-    drawerContainer: {
-        padding: "20px 30px",
-    },
-}));
-
+import './Header.css';
 
 
 export default function Header() {
-    const { header, logo, toolbar, drawerContainer } = useStyles();
 
     const [state, setState] = useState({
         mobileView: false,
@@ -69,17 +37,17 @@ export default function Header() {
 
     const displayDesktop = () => {
         return (
-            <Toolbar no-border className={toolbar} style={{ justifyContent: "space-between" }}>
-                <Link to="/" style={{ textDecoration: 'inherit' }}>{pollyLogo}</Link>
+            <Toolbar no-border className="toolbar" style={{ WebkitBoxShadow: "none", justifyContent: "space-between" }}>
+                <Link className="no-decoration" to="/">{pollyLogo}</Link>
                 <div>
 
-                    <Link to="/login" style={{ textDecoration: 'inherit' }}>
-                        <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} >
+                    <Link to="/login" className="no-decoration">
+                        <Button color="primary" className="menu-button" >
                             Login
                         </Button>
                     </Link>&nbsp;
 
-                    <Button color="primary" style={{ letterSpacing: "0.1em", fontWeight: 600, backgroundColor: "#2496cf", textTransform: "none", borderRadius: "4px", padding: "16px 20px", boxShadow: 'none' }} variant="contained">Sign Up</Button>
+                    <Button color="primary" className="menu-button" variant="contained">Sign Up</Button>
                 </div>
             </Toolbar>
         );
@@ -93,13 +61,12 @@ export default function Header() {
             setState((prevState) => ({ ...prevState, drawerOpen: false }));
 
         return (
-            <Toolbar no-border className={toolbar} style={{ justifyContent: "center" }}>
+            <Toolbar no-border className="toolbar" style={{ justifyContent: "center" }}>
                 <IconButton
                     {...{
                         edge: "start",
                         onClick: handleDrawerOpen,
-                    }}
-                >
+                    }}>
                     <MenuIcon />
                 </IconButton>
 
@@ -110,15 +77,15 @@ export default function Header() {
                         onClose: handleDrawerClose,
                     }}
                 >
-                    <div className={drawerContainer}>
-                        <Link to="/login">
+                    <div className="drawerContainer">
+                        <Link to="/login" className="no-decoration">
                             <MenuItem>Login</MenuItem>
                         </Link>
                     </div>
                 </Drawer>
 
                 <div>
-                    <Link to="/">
+                    <Link to="/" className="no-decoration">
                         {pollyLogo}
                     </Link>
                 </div>
@@ -128,14 +95,14 @@ export default function Header() {
 
 
     const pollyLogo = (
-        <Typography variant="h6" component="h1" className={logo}>
-            <img style={{ height: "50px", float: "left" }} src={pollIcon} alt="poll" /> Polly.
+        <Typography variant="h6" component="h1">
+            <img className="logoImg" src={pollIcon} alt="poll" /> <span className="pollyLogo">Polly.</span>
         </Typography>
     );
 
     return (
         <header>
-            <AppBar position="static" >
+            <AppBar position="static" style={{ WebkitBoxShadow: "none", backgroundColor: "white" }}>
                 {mobileView ? displayMobile() : displayDesktop()}
             </AppBar>
         </header>

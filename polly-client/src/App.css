@@ -1,10 +1,19 @@
 .wrapper{
-    background-color: #FAFAFA;
-    color: #2D2D2D;
-    font-family: 'Ubuntu';
+    background-color: #FFFAFA;
     height: 100%;
     margin:0px auto;
 }
+
+.no-decoration{
+  text-decoration: inherit
+}
+
+body{
+  background-color: whitesmoke;
+  font-family: 'Ubuntu';
+
+}
+
 
 mark{
   background-color:gray;
@@ -20,7 +29,9 @@ mark{
     color: #222222;
     justify-content: center;
     text-align: center;
+    font-weight: 600
 }
+
 
 .altSlogan{
   margin-top:2em;
@@ -44,8 +55,12 @@ mark{
 }
 
 .createPoll{
+  font-size: 22px;
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: -0.36px;
   text-align: center;
-
+  margin-top: 1.2em;
 }
 .hidden{
   position:absolute;

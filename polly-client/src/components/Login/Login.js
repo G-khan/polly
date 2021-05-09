@@ -1,5 +1,4 @@
 import './Login.css';
-import Header from '../Dashboard/Header';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -20,7 +19,6 @@ class Login extends Component{
 export default function LoginFun() {
     return (
         <div className="login-wrapper">
-            
             <form>
                 <Card>
                     <CardHeader title="Login App" />
